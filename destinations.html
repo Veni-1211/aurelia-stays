@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Destinations | Aurelia Stays</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="./style.css">
+
+    <!-- Destination CSS -->
+    <link rel="stylesheet" href="./destinations.css">
+
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold logo" href="index.html">
+                Aurelia<span>Stays</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="hotels.html">
+                            Hotels
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="offers.html">
+                            Offers
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <a href="login.html" class="btn login-btn">
+                            <i class="bi bi-person"></i>
+                            Login / Signup
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+<section class="destination-hero">
+
+    <div class="destination-hero-overlay"></div>
+
+
+    <div class="container destination-hero-content">
+
+        <div class="row">
+
+            <div class="col-lg-8">
+
+                <span class="destination-kicker">
+
+                    <i class="bi bi-compass"></i>
+
+                    TRAVEL YOUR WAY
+
+                </span>
+
+
+                <h1>
+
+                    Find a place
+                    <br>
+                    worth travelling for.
+
+                </h1>
+
+
+                <p>
+
+                    From relaxing beaches to busy city streets,
+                    discover destinations that make your next
+                    journey unforgettable.
+
+                </p>
+
+
+                <a href="#featured"
+                    class="btn btn-light rounded-pill px-4 py-3">
+
+                    Explore Destinations
+
+                    <i class="bi bi-arrow-down ms-2"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="destination-search-section">
+
+    <div class="container">
+
+        <div class="destination-search">
+
+            <div class="search-title">
+
+                <span>
+                    <i class="bi bi-search"></i>
+                </span>
+
+                <div>
+
+                    <strong>
+                        Where do you want to go?
+                    </strong>
+
+                    <small>
+                        Search destinations and discover stays
+                    </small>
+
+                </div>
+
+            </div>
+
+
+            <div class="destination-search-input">
+
+                <i class="bi bi-geo-alt"></i>
+
+                <input type="text"
+                    id="destinationSearch"
+                    class="form-control"
+                    placeholder="Search city or destination">
+
+            </div>
+
+
+            <button type="button"
+                id="searchDestination"
+                class="btn btn-success rounded-pill px-4">
+
+                Search
+
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="featured-section"
+    id="featured">
+
+    <div class="container">
+
+
+        <div class="section-heading">
+
+            <div>
+
+                <span>
+                    FEATURED PLACES
+                </span>
+
+                <h2>
+                    Popular destinations
+                </h2>
+
+            </div>
+
+
+            <p>
+
+                Explore some of the destinations
+                travellers are loving right now.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="row g-4">
+
+
+            <!-- GOA -->
+
+            <div class="col-lg-7 destination-item"
+                data-name="goa">
+
+                <a href="hotels.html?city=Goa"
+                    class="featured-destination featured-large">
+
+                    <img src="./images/goa.avif"
+                        alt="Goa beach">
+
+                    <div class="destination-gradient"></div>
+
+
+                    <div class="featured-content">
+
+                        <span class="destination-tag">
+                            BEACH ESCAPE
+                        </span>
+
+                        <h3>
+                            Goa
+                        </h3>
+
+                        <p>
+                            Sun, beaches and unforgettable
+                            coastal experiences.
+                        </p>
+
+                        <div class="destination-meta">
+
+                            <span>
+                                <i class="bi bi-building"></i>
+                                128 properties
+                            </span>
+
+                            <span>
+                                Explore
+                                <i class="bi bi-arrow-right"></i>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- JAIPUR -->
+
+            <div class="col-lg-5 destination-item"
+                data-name="jaipur">
+
+                <a href="hotels.html?city=Jaipur"
+                    class="featured-destination">
+
+                    <img src="./images/destination2.jfif"
+                        alt="Jaipur palace">
+
+                    <div class="destination-gradient"></div>
+
+
+                    <div class="featured-content">
+
+                        <span class="destination-tag">
+                            HERITAGE
+                        </span>
+
+                        <h3>
+                            Jaipur
+                        </h3>
+
+                        <p>
+                            Royal palaces, colourful bazaars
+                            and timeless architecture.
+                        </p>
+
+                        <div class="destination-meta">
+
+                            <span>
+                                94 properties
+                            </span>
+
+                            <span>
+                                Explore
+                                <i class="bi bi-arrow-right"></i>
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- MUMBAI -->
+
+            <div class="col-md-4 destination-item"
+                data-name="mumbai">
+
+                <a href="hotels.html?city=Mumbai"
+                    class="featured-destination small-destination">
+
+                    <img src="./images/mumbai.avif"
+                        alt="Mumbai">
+
+                    <div class="destination-gradient"></div>
+
+
+                    <div class="featured-content">
+
+                        <span class="destination-tag">
+                            CITY LIFE
+                        </span>
+
+                        <h3>
+                            Mumbai
+                        </h3>
+
+                        <div class="destination-meta">
+
+                            <span>
+                                156 properties
+                            </span>
+
+                            <span>
+                                →
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- MUNNAR -->
+
+            <div class="col-md-4 destination-item"
+                data-name="munnar">
+
+                <a href="hotels.html?city=Munnar"
+                    class="featured-destination small-destination">
+
+                    <img src="./images/munnar.jfif"
+                        alt="Munnar">
+
+                    <div class="destination-gradient"></div>
+
+
+                    <div class="featured-content">
+
+                        <span class="destination-tag">
+                            MOUNTAINS
+                        </span>
+
+                        <h3>
+                            Munnar
+                        </h3>
+
+                        <div class="destination-meta">
+
+                            <span>
+                                43 properties
+                            </span>
+
+                            <span>
+                                →
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- MANALI -->
+
+            <div class="col-md-4 destination-item"
+                data-name="manali">
+
+                <a href="hotels.html?city=Manali"
+                    class="featured-destination small-destination">
+
+                    <img src="./images/manali.jfif"
+                        alt="Manali mountains">
+
+                    <div class="destination-gradient"></div>
+
+
+                    <div class="featured-content">
+
+                        <span class="destination-tag">
+                            MOUNTAIN ESCAPE
+                        </span>
+
+                        <h3>
+                            Manali
+                        </h3>
+
+                        <div class="destination-meta">
+
+                            <span>
+                                71 properties
+                            </span>
+
+                            <span>
+                                →
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+
+        <div id="noDestination"
+            class="text-center d-none mt-5">
+
+            <i class="bi bi-geo-alt fs-1 text-muted"></i>
+
+            <h4 class="mt-3">
+                Destination not found
+            </h4>
+
+            <p class="text-muted">
+                Try searching for Goa, Jaipur, Mumbai,
+                Munnar or Manali.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="travel-types">
+
+    <div class="container">
+
+
+        <div class="section-heading centered">
+
+            <span>
+                FIND YOUR STYLE
+            </span>
+
+            <h2>
+                What kind of trip are you planning?
+            </h2>
+
+            <p>
+                Choose your travel mood and discover
+                stays that match it.
+            </p>
+
+        </div>
+
+
+
+        <div class="row g-4">
+
+
+            <!-- BEACH -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <a href="hotels.html?type=beach"
+                    class="travel-type-card">
+
+                    <div class="travel-icon">
+
+                        <i class="bi bi-brightness-high"></i>
+
+                    </div>
+
+                    <h4>
+                        Beach Escapes
+                    </h4>
+
+                    <p>
+                        Wake up near the sea and enjoy
+                        relaxed coastal days.
+                    </p>
+
+                    <span>
+                        Explore stays
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- MOUNTAIN -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <a href="hotels.html?type=mountain"
+                    class="travel-type-card">
+
+                    <div class="travel-icon">
+
+                        <i class="bi bi-cloud-snow"></i>
+
+                    </div>
+
+                    <h4>
+                        Mountain Retreats
+                    </h4>
+
+                    <p>
+                        Escape to cooler weather,
+                        scenic views and peaceful mornings.
+                    </p>
+
+                    <span>
+                        Explore stays
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- CITY -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <a href="hotels.html?type=city"
+                    class="travel-type-card">
+
+                    <div class="travel-icon">
+
+                        <i class="bi bi-buildings"></i>
+
+                    </div>
+
+                    <h4>
+                        City Breaks
+                    </h4>
+
+                    <p>
+                        Stay close to shopping,
+                        dining and popular attractions.
+                    </p>
+
+                    <span>
+                        Explore stays
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+
+            <!-- HERITAGE -->
+
+            <div class="col-lg-3 col-md-6">
+
+                <a href="hotels.html?type=heritage"
+                    class="travel-type-card">
+
+                    <div class="travel-icon">
+
+                        <i class="bi bi-bank"></i>
+
+                    </div>
+
+                    <h4>
+                        Heritage Stays
+                    </h4>
+
+                    <p>
+                        Experience historic properties
+                        with modern comfort.
+                    </p>
+
+                    <span>
+                        Explore stays
+                        <i class="bi bi-arrow-right"></i>
+                    </span>
+
+                </a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     TRAVEL INSPIRATION
+===================================================== -->
+
+<section class="travel-inspiration">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+
+            <div class="col-lg-6">
+
+                <div class="inspiration-image">
+
+                    <img src="./images/desstination3.jfif"
+                        alt="Travel experience">
+
+                    <div class="experience-badge">
+
+                        <strong>
+                            4.8/5
+                        </strong>
+
+                        <span>
+                            Guest rated
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="col-lg-6">
+
+                <span class="section-label">
+                    TRAVEL INSPIRATION
+                </span>
+
+                <h2>
+                    Your next great memory
+                    could start with a stay.
+                </h2>
+
+                <p>
+                    Whether you're travelling for a weekend,
+                    planning a family holiday or exploring
+                    somewhere completely new, Aurelia Stays
+                    helps you find a comfortable place to begin
+                    your journey.
+                </p>
+
+
+                <div class="inspiration-points">
+
+                    <div>
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        <span>
+                            Thousands of comfortable stays
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        <span>
+                            Properties across popular destinations
+                        </span>
+
+                    </div>
+
+
+                    <div>
+
+                        <i class="bi bi-check-circle-fill"></i>
+
+                        <span>
+                            Simple and transparent booking
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <a href="hotels.html"
+                    class="btn btn-success rounded-pill px-4">
+
+                    Find a Hotel
+
+                    <i class="bi bi-arrow-right ms-2"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+
+            <!-- BRAND -->
+
+            <div class="col-lg-4 col-md-6">
+
+                <h3 class="footer-logo">
+                    Aurelia<span>Stays</span>
+                </h3>
+
+                <p class="fs-5">
+                    Discover comfortable hotels, affordable stays and
+                    memorable travel experiences with Aurelia Stays.
+                </p>
+
+                <div class="social-icons">
+
+                    <a href="#" aria-label="Facebook">
+                        <i class="bi bi-facebook fs-5"></i>
+                    </a>
+
+                    <a href="#" aria-label="Instagram">
+                        <i class="bi bi-instagram fs-5"></i>
+                    </a>
+
+                    <a href="#" aria-label="Twitter">
+                        <i class="bi bi-twitter-x fs-5"></i>
+                    </a>
+
+                    <a href="#" aria-label="LinkedIn">
+                        <i class="bi bi-linkedin fs-5"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- COMPANY -->
+
+            <div class="col-lg-2 col-md-6">
+
+                <h5>
+                    Company
+                </h5>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="hotels.html">
+                    Hotels
+                </a>
+
+                <a href="destinations.html">
+                    Destinations
+                </a>
+
+                <a href="offers.html">
+                    Offers
+                </a>
+
+            </div>
+
+
+            <!-- EXPLORE -->
+
+            <div class="col-lg-2 col-md-6">
+
+                <h5>
+                    Explore
+                </h5>
+
+                <a href="reviews.html">
+                    Reviews
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="signup.html">
+                    Sign Up
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+            <!-- SUPPORT -->
+
+            <div class="col-lg-2 col-md-6">
+
+                <h5>
+                    Support
+                </h5>
+
+                <a href="contact.html">
+                    Help Center
+                </a>
+
+                <a href="contact.html">
+                    Booking Help
+                </a>
+
+                <a href="terms.html">
+                    Terms & Conditions
+                </a>
+
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+
+            </div>
+
+
+            <!-- CONTACT -->
+
+            <div class="col-lg-2 col-md-6">
+
+                <h5>
+                    Contact
+                </h5>
+
+                <p class="footer-contact">
+
+                    <i class="bi bi-telephone"></i>
+
+                    +91 80 4000 1200
+
+                </p>
+
+                <p class="footer-contact">
+
+                    <i class="bi bi-envelope"></i>
+
+                    support@aureliastays.com
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="copyright text-center">
+
+            © 2026 Aurelia Stays. All Rights Reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- Destination JS -->
+
+<script src="./script.js"></script>
+
+
+</body>
+
+</html>

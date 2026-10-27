@@ -1,0 +1,1151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Complete Booking | Aurelia Stays</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Booking CSS -->
+    <link rel="stylesheet"
+        href="./style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVBAR
+===================================================== -->
+
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold logo" href="index.html">
+                Aurelia<span>Stays</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="hotels.html">
+                            Hotels
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="offers.html">
+                            Offers
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <a href="login.html" class="btn login-btn">
+                            <i class="bi bi-person"></i>
+                            Login / Signup
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+
+
+
+<!-- =====================================================
+     BOOKING PROGRESS
+===================================================== -->
+
+<section class="progress-section">
+
+    <div class="container">
+
+        <div class="booking-progress">
+
+            <div class="progress-step active">
+
+                <span class="progress-number">
+                    1
+                </span>
+
+                <span>
+                    Guest Details
+                </span>
+
+            </div>
+
+
+            <div class="progress-line"></div>
+
+
+            <div class="progress-step">
+
+                <span class="progress-number">
+                    2
+                </span>
+
+                <span>
+                    Payment
+                </span>
+
+            </div>
+
+
+            <div class="progress-line"></div>
+
+
+            <div class="progress-step">
+
+                <span class="progress-number">
+                    3
+                </span>
+
+                <span>
+                    Confirmation
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="booking-main">
+
+    <div class="container">
+
+
+        <!-- PAGE TITLE -->
+
+        <div class="booking-heading">
+
+            <div>
+
+                <span class="heading-label">
+                    YOUR RESERVATION
+                </span>
+
+                <h1>
+                    Complete your booking
+                </h1>
+
+                <p>
+                    Almost there! Enter your details to secure your stay.
+                </p>
+
+            </div>
+
+
+            <a href="hotels.html"
+                class="back-link">
+
+                <i class="bi bi-arrow-left"></i>
+
+                Change hotel
+
+            </a>
+
+        </div>
+
+
+
+        <div class="row g-4">
+
+
+            <!-- =================================================
+                 LEFT COLUMN
+            ================================================= -->
+
+            <div class="col-xl-7">
+
+
+                <!-- GUEST DETAILS -->
+
+                <div class="booking-card">
+
+                    <div class="card-heading">
+
+                        <div class="heading-icon">
+
+                            <i class="bi bi-person"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h3>
+                                Guest details
+                            </h3>
+
+                            <p>
+                                Tell us who will be staying
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <form id="bookingForm">
+
+
+                        <div class="section-label">
+                            PERSONAL INFORMATION
+                        </div>
+
+
+                        <div class="row g-3">
+
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    First name
+                                </label>
+
+                                <input type="text"
+                                    class="form-control"
+                                    id="firstName"
+                                    placeholder="Enter first name"
+                                    required>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Last name
+                                </label>
+
+                                <input type="text"
+                                    class="form-control"
+                                    id="lastName"
+                                    placeholder="Enter last name"
+                                    required>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Email address
+                                </label>
+
+                                <input type="email"
+                                    class="form-control"
+                                    id="email"
+                                    placeholder="you@example.com"
+                                    required>
+
+                                <small>
+                                    Booking confirmation will be sent here.
+                                </small>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Mobile number
+                                </label>
+
+                                <input type="tel"
+                                    class="form-control"
+                                    id="phone"
+                                    placeholder="+91 98765 43210"
+                                    required>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Country / Region
+                                </label>
+
+                                <select class="form-select"
+                                    id="country">
+
+                                    <option>
+                                        India
+                                    </option>
+
+                                    <option>
+                                        United States
+                                    </option>
+
+                                    <option>
+                                        United Kingdom
+                                    </option>
+
+                                    <option>
+                                        Australia
+                                    </option>
+
+                                    <option>
+                                        Singapore
+                                    </option>
+
+                                    <option>
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="col-md-6">
+
+                                <label class="form-label">
+                                    Number of guests
+                                </label>
+
+                                <select class="form-select"
+                                    id="guests">
+
+                                    <option>
+                                        1 Adult
+                                    </option>
+
+                                    <option selected>
+                                        2 Adults
+                                    </option>
+
+                                    <option>
+                                        2 Adults, 1 Child
+                                    </option>
+
+                                    <option>
+                                        2 Adults, 2 Children
+                                    </option>
+
+                                    <option>
+                                        3 Adults
+                                    </option>
+
+                                    <option>
+                                        4 Adults
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="section-divider"></div>
+
+
+
+                        <!-- SPECIAL REQUEST -->
+
+                        <div class="section-label">
+                            SPECIAL REQUESTS
+                        </div>
+
+
+                        <label class="form-label">
+
+                            Anything we should know?
+
+                            <span class="optional">
+                                Optional
+                            </span>
+
+                        </label>
+
+
+                        <textarea
+                            class="form-control"
+                            id="specialRequest"
+                            rows="4"
+                            placeholder="For example: late check-in, extra bed, high floor..."></textarea>
+
+
+
+                        <!-- PAYMENT -->
+
+                        <div class="section-divider"></div>
+
+
+                        <div class="section-label">
+                            PAYMENT METHOD
+                        </div>
+
+
+                        <div class="payment-options">
+
+
+                            <label class="payment-card active">
+
+                                <input type="radio"
+                                    name="payment"
+                                    value="hotel"
+                                    checked>
+
+                                <div class="payment-icon">
+
+                                    <i class="bi bi-building"></i>
+
+                                </div>
+
+                                <div class="payment-content">
+
+                                    <strong>
+                                        Pay at hotel
+                                    </strong>
+
+                                    <span>
+                                        Pay when you arrive at the property
+                                    </span>
+
+                                </div>
+
+                                <i class="bi bi-check-circle-fill payment-check"></i>
+
+                            </label>
+
+
+
+                            <label class="payment-card">
+
+                                <input type="radio"
+                                    name="payment"
+                                    value="card">
+
+                                <div class="payment-icon">
+
+                                    <i class="bi bi-credit-card"></i>
+
+                                </div>
+
+                                <div class="payment-content">
+
+                                    <strong>
+                                        Credit / Debit Card
+                                    </strong>
+
+                                    <span>
+                                        Secure online payment
+                                    </span>
+
+                                </div>
+
+                                <i class="bi bi-check-circle-fill payment-check"></i>
+
+                            </label>
+
+
+
+                            <label class="payment-card">
+
+                                <input type="radio"
+                                    name="payment"
+                                    value="upi">
+
+                                <div class="payment-icon">
+
+                                    <i class="bi bi-phone"></i>
+
+                                </div>
+
+                                <div class="payment-content">
+
+                                    <strong>
+                                        UPI
+                                    </strong>
+
+                                    <span>
+                                        Pay using your preferred UPI app
+                                    </span>
+
+                                </div>
+
+                                <i class="bi bi-check-circle-fill payment-check"></i>
+
+                            </label>
+
+                        </div>
+
+
+
+                        <!-- TERMS -->
+
+                        <div class="terms-box">
+
+                            <div class="form-check">
+
+                                <input class="form-check-input"
+                                    type="checkbox"
+                                    id="bookingTerms"
+                                    required>
+
+                                <label class="form-check-label"
+                                    for="bookingTerms">
+
+                                    I agree to Aurelia Stays'
+                                    <a href="terms.html">
+                                        Terms & Conditions
+                                    </a>
+                                    and
+                                    <a href="privacy.html">
+                                        Privacy Policy
+                                    </a>.
+
+                                </label>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div id="bookingMessage"></div>
+
+
+
+                        <button type="submit"
+                            class="confirm-btn">
+
+                            <span>
+                                Confirm Booking
+                            </span>
+
+                            <i class="bi bi-arrow-right"></i>
+
+                        </button>
+
+
+                        <div class="secure-payment">
+
+                            <i class="bi bi-lock-fill"></i>
+
+                            Your information is protected with secure encryption.
+
+                        </div>
+
+
+                    </form>
+
+                </div>
+
+
+
+                <!-- CANCELLATION -->
+
+                <div class="info-card">
+
+                    <div class="info-icon">
+
+                        <i class="bi bi-calendar-check"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h5>
+                            Free cancellation
+                        </h5>
+
+                        <p>
+                            You can cancel this reservation without a fee
+                            before the property's cancellation deadline.
+                        </p>
+
+                        <a href="#">
+                            View cancellation policy
+                            <i class="bi bi-arrow-right"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- =================================================
+                 RIGHT COLUMN
+            ================================================= -->
+
+            <div class="col-xl-5">
+
+
+                <!-- HOTEL SUMMARY -->
+
+                <div class="summary-card">
+
+
+                    <div class="summary-image">
+
+                        <img
+                            src="https://images.unsplash.com/photo-1571003123894-1f0594d2b5d9?auto=format&fit=crop&w=900&q=80"
+                            alt="Aurelia Marina Grand">
+
+                        <span class="hotel-badge">
+
+                            <i class="bi bi-star-fill"></i>
+
+                            4.8
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="summary-content">
+
+
+                        <span class="property-type">
+                            PREMIUM HOTEL
+                        </span>
+
+
+                        <h2>
+                            Aurelia Marina Grand
+                        </h2>
+
+
+                        <p class="location">
+
+                            <i class="bi bi-geo-alt-fill"></i>
+
+                            Candolim, Goa
+
+                        </p>
+
+
+                        <div class="guest-rating">
+
+                            <span>
+                                4.8
+                            </span>
+
+                            <strong>
+                                Excellent
+                            </strong>
+
+                            <small>
+                                428 reviews
+                            </small>
+
+                        </div>
+
+
+                        <div class="summary-divider"></div>
+
+
+
+                        <!-- STAY DETAILS -->
+
+                        <div class="stay-details">
+
+
+                            <div class="stay-item">
+
+                                <span class="detail-label">
+                                    CHECK-IN
+                                </span>
+
+                                <strong>
+                                    12 Sep 2026
+                                </strong>
+
+                                <small>
+                                    From 2:00 PM
+                                </small>
+
+                            </div>
+
+
+                            <div class="stay-item">
+
+                                <span class="detail-label">
+                                    CHECK-OUT
+                                </span>
+
+                                <strong>
+                                    14 Sep 2026
+                                </strong>
+
+                                <small>
+                                    Before 11:00 AM
+                                </small>
+
+                            </div>
+
+
+                            <div class="stay-item full">
+
+                                <span class="detail-label">
+                                    GUESTS
+                                </span>
+
+                                <strong>
+                                    2 Adults
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="summary-divider"></div>
+
+
+
+                        <!-- ROOM -->
+
+                        <div class="room-summary">
+
+                            <div>
+
+                                <span class="detail-label">
+                                    YOUR ROOM
+                                </span>
+
+                                <h5>
+                                    Deluxe Garden Room
+                                </h5>
+
+                                <p>
+                                    <i class="bi bi-bed"></i>
+                                    1 King Bed
+                                </p>
+
+                                <p>
+                                    <i class="bi bi-wifi"></i>
+                                    Free Wi-Fi
+                                </p>
+
+                                <p>
+                                    <i class="bi bi-cup-hot"></i>
+                                    Breakfast included
+                                </p>
+
+                            </div>
+
+
+                            <button type="button"
+                                class="change-room">
+
+                                Change
+
+                            </button>
+
+                        </div>
+
+
+
+                        <div class="summary-divider"></div>
+
+
+
+                        <!-- PRICE -->
+
+                        <div class="price-section">
+
+                            <h5>
+                                Price breakdown
+                            </h5>
+
+
+                            <div class="price-row">
+
+                                <span>
+                                    ₹7,400 × 2 nights
+                                </span>
+
+                                <strong>
+                                    ₹14,800
+                                </strong>
+
+                            </div>
+
+
+                            <div class="price-row">
+
+                                <span>
+                                    Taxes & fees
+                                </span>
+
+                                <strong>
+                                    ₹1,776
+                                </strong>
+
+                            </div>
+
+
+                            <div class="price-row discount">
+
+                                <span>
+
+                                    <i class="bi bi-tag-fill"></i>
+
+                                    Aurelia member discount
+
+                                </span>
+
+                                <strong>
+                                    -₹1,000
+                                </strong>
+
+                            </div>
+
+
+                            <div class="summary-divider"></div>
+
+
+                            <div class="total-row">
+
+                                <div>
+
+                                    <span>
+                                        Total
+                                    </span>
+
+                                    <small>
+                                        Includes taxes & fees
+                                    </small>
+
+                                </div>
+
+                                <strong id="totalPrice">
+                                    ₹15,576
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- TRUST -->
+
+                <div class="trust-card">
+
+
+                    <div class="trust-item">
+
+                        <div class="trust-icon">
+
+                            <i class="bi bi-shield-check"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Secure booking
+                            </strong>
+
+                            <p>
+                                Your personal information is protected.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="trust-item">
+
+                        <div class="trust-icon">
+
+                            <i class="bi bi-headset"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                24/7 support
+                            </strong>
+
+                            <p>
+                                We're here whenever you need us.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="trust-item">
+
+                        <div class="trust-icon">
+
+                            <i class="bi bi-check2-circle"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Instant confirmation
+                            </strong>
+
+                            <p>
+                                Receive your booking details instantly.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer class="footer">
+
+    <div class="container">
+
+        <div class="row g-4">
+
+            <div class="col-lg-4 col-md-6">
+
+                <h3 class="footer-logo">
+                    Aurelia<span>Stays</span>
+                </h3>
+
+                <p class="fs-5">
+
+                    Discover comfortable hotels, affordable stays
+                    and memorable travel experiences with Aurelia Stays.
+
+                </p>
+
+
+                <div class="social-icons">
+
+                    <a href="#">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+
+                    <a href="#">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-lg-2 col-md-6">
+
+                <h5>
+                    Company
+                </h5>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="hotels.html">
+                    Hotels
+                </a>
+
+                <a href="destinations.html">
+                    Destinations
+                </a>
+
+                <a href="offers.html">
+                    Offers
+                </a>
+
+            </div>
+
+
+
+            <div class="col-lg-2 col-md-6">
+
+                <h5>
+                    Explore
+                </h5>
+
+                <a href="reviews.html">
+                    Reviews
+                </a>
+
+                <a href="login.html">
+                    Login
+                </a>
+
+                <a href="signup.html">
+                    Sign Up
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+
+
+            <div class="col-lg-2 col-md-6">
+
+                <h5>
+                    Support
+                </h5>
+
+                <a href="contact.html">
+                    Help Center
+                </a>
+
+                <a href="contact.html">
+                    Booking Help
+                </a>
+
+                <a href="terms.html">
+                    Terms & Conditions
+                </a>
+
+                <a href="privacy.html">
+                    Privacy Policy
+                </a>
+
+            </div>
+
+
+
+            <div class="col-lg-2 col-md-6">
+
+                <h5>
+                    Contact
+                </h5>
+
+                <p class="footer-contact">
+
+                    <i class="bi bi-telephone"></i>
+
+                    +91 80 4000 1200
+
+                </p>
+
+                <p class="footer-contact">
+
+                    <i class="bi bi-envelope"></i>
+
+                    support@aureliastays.com
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <hr>
+
+
+        <div class="copyright text-center">
+
+            © 2026 Aurelia Stays. All Rights Reserved.
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- Bootstrap JS -->
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- Booking JS -->
+
+<script src="./script.js"></script>
+
+</body>
+
+</html>

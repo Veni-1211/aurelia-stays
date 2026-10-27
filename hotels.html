@@ -1,0 +1,1350 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Hotels | Aurelia Stays</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-white shadow-sm sticky-top">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold logo" href="index.html">
+                Aurelia<span>Stays</span>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNavbar">
+
+                <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">
+                            Home
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="hotels.html">
+                            Hotels
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="offers.html">
+                            Offers
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">
+                            About
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">
+                            Contact
+                        </a>
+                    </li>
+
+                    <li class="nav-item ms-lg-3">
+                        <a href="login.html" class="btn login-btn">
+                            <i class="bi bi-person"></i>
+                            Login / Signup
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+        </div>
+    </nav>
+    <section class="hotel-page">
+
+        <div class="container">
+
+            <div class="breadcrumb-area">
+
+                <span>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <i class="bi bi-chevron-right"></i>
+
+                    Hotels
+
+                </span>
+
+            </div>
+            <div class="search-summary">
+
+                <div class="row align-items-center">
+
+                    <div class="col-lg-9">
+
+                        <h4 id="searchTitle">
+                            Hotels in Shreveport
+                        </h4>
+
+                        <p id="searchDetails">
+                            Find comfortable and affordable hotels
+                            for your next stay.
+                        </p>
+
+                    </div>
+
+
+                    <div class="col-lg-3 text-lg-end mt-3 mt-lg-0">
+
+                        <button class="modify-search" onclick="modifySearch()">
+
+                            <i class="bi bi-search"></i>
+
+                            Modify Search
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="container-fluid py-4">
+
+                <div class="row g-4">
+
+                    <div class="col-lg-3">
+
+                        <div class="filter-box">
+
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+
+                                <h5 class="mb-0">
+                                    Filters
+                                </h5>
+
+                                <button type="button" class="btn btn-sm btn-link p-0" onclick="clearFilters()">
+                                    Clear All
+                                </button>
+
+                            </div>
+
+
+                            <!-- =============================================
+                     PRICE FILTER
+                ============================================== -->
+
+                            <div class="filter-section mb-4">
+
+                                <h6>
+                                    Price per night
+                                </h6>
+
+                                <input type="range" id="priceRange" class="form-range" min="500" max="10000"
+                                    value="10000" step="100">
+
+                                <div class="d-flex justify-content-between">
+
+                                    <span>
+                                        ₹500
+                                    </span>
+
+                                    <strong id="priceValue">
+                                        ₹10,000
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- =============================================
+                     GUEST RATING
+                ============================================== -->
+
+                            <div class="filter-section mb-4">
+
+                                <h6>
+                                    Guest Rating
+                                </h6>
+
+                                <div class="form-check mb-2">
+
+                                    <input class="form-check-input rating-filter" type="checkbox" id="rating45"
+                                        value="4.5">
+
+                                    <label class="form-check-label" for="rating45">
+                                        4.5+ Excellent
+                                    </label>
+
+                                </div>
+
+
+                                <div class="form-check mb-2">
+
+                                    <input class="form-check-input rating-filter" type="checkbox" id="rating40"
+                                        value="4">
+
+                                    <label class="form-check-label" for="rating40">
+                                        4.0+ Very Good
+                                    </label>
+
+                                </div>
+
+
+                                <div class="form-check">
+
+                                    <input class="form-check-input rating-filter" type="checkbox" id="rating30"
+                                        value="3">
+
+                                    <label class="form-check-label" for="rating30">
+                                        3.0+ Good
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- =============================================
+                     PROPERTY TYPE
+                ============================================== -->
+
+                            <div class="filter-section mb-4">
+
+                                <h6>
+                                    Property Type
+                                </h6>
+
+
+                                <div class="form-check mb-2">
+
+                                    <input class="form-check-input type-filter" type="checkbox" id="typeHotel"
+                                        value="hotel">
+
+                                    <label class="form-check-label" for="typeHotel">
+                                        Hotels
+                                    </label>
+
+                                </div>
+
+
+                                <div class="form-check">
+
+                                    <input class="form-check-input type-filter" type="checkbox" id="typeResort"
+                                        value="resort">
+
+                                    <label class="form-check-label" for="typeResort">
+                                        Resorts
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- =============================================
+                     AMENITIES
+                ============================================== -->
+
+                            <div class="filter-section">
+
+                                <h6>
+                                    Amenities
+                                </h6>
+
+
+                                <div class="form-check mb-2">
+
+                                    <input class="form-check-input amenity-filter" type="checkbox" id="amenityWifi"
+                                        value="wifi">
+
+                                    <label class="form-check-label" for="amenityWifi">
+                                        Free Wi-Fi
+                                    </label>
+
+                                </div>
+
+
+                                <div class="form-check mb-2">
+
+                                    <input class="form-check-input amenity-filter" type="checkbox" id="amenityParking"
+                                        value="parking">
+
+                                    <label class="form-check-label" for="amenityParking">
+                                        Parking
+                                    </label>
+
+                                </div>
+
+
+                                <div class="form-check mb-2">
+
+                                    <input class="form-check-input amenity-filter" type="checkbox" id="amenityAC"
+                                        value="ac">
+
+                                    <label class="form-check-label" for="amenityAC">
+                                        Air Conditioning
+                                    </label>
+
+                                </div>
+
+
+                                <div class="form-check mb-2">
+
+                                    <input class="form-check-input amenity-filter" type="checkbox" id="amenityBreakfast"
+                                        value="breakfast">
+
+                                    <label class="form-check-label" for="amenityBreakfast">
+                                        Breakfast
+                                    </label>
+
+                                </div>
+
+
+                                <div class="form-check">
+
+                                    <input class="form-check-input amenity-filter" type="checkbox" id="amenityPool"
+                                        value="pool">
+
+                                    <label class="form-check-label" for="amenityPool">
+                                        Swimming Pool
+                                    </label>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="col-lg-9">
+
+                        <div class="listing-top">
+
+                            <div>
+
+                                <h3>
+                                    <span id="hotelCount">6</span>
+                                    Hotels Found
+                                </h3>
+
+                                <p id="searchDetails">
+                                    Showing available properties across India
+                                </p>
+
+                            </div>
+
+                            <select class="form-select sort-select" id="sortHotels">
+
+                                <option value="recommended">
+                                    Recommended
+                                </option>
+
+                                <option value="price-low">
+                                    Price: Low to High
+                                </option>
+
+                                <option value="price-high">
+                                    Price: High to Low
+                                </option>
+
+                                <option value="rating">
+                                    Guest Rating
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div id="hotelListContainer">
+
+
+                            <div class="listing-card hotel-item hotel-clickable" data-id="1"
+                                data-name="Aurelia Grand Hyderabad" data-price="3499" data-old-price="5299"
+                                data-rating="4.6" data-reviews="328" data-type="hotel" data-location="hyderabad"
+                                data-full-location="Banjara Hills, Hyderabad" data-amenities="wifi,parking,ac,breakfast"
+                                data-image="./images/hotel1.avif"
+                                data-discount="35"
+                                data-description="Aurelia Grand Hyderabad offers a comfortable stay in Banjara Hills with modern rooms, complimentary Wi-Fi, parking, air conditioning and breakfast.">
+
+                                <div class="row g-0">
+
+                                    <div class="col-md-4">
+
+                                        <div class="listing-image">
+
+                                            <img src="./images/home-b1.avif"
+                                                alt="Aurelia Grand Hyderabad">
+
+                                            <span class="listing-discount">
+                                                35% OFF
+                                            </span>
+
+                                            <button class="listing-heart" type="button" aria-label="Add to favorites">
+                                                <i class="bi bi-heart"></i>
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-8">
+
+                                        <div class="listing-content">
+
+                                            <div>
+
+                                                <span class="rating-box">
+                                                    4.6
+                                                    <i class="bi bi-star-fill"></i>
+                                                </span>
+
+                                                <span class="rating-text">
+                                                    Excellent · 328 reviews
+                                                </span>
+
+                                            </div>
+
+                                            <h4>
+                                                Aurelia Grand Hyderabad
+                                            </h4>
+
+                                            <p class="location-text">
+
+                                                <i class="bi bi-geo-alt"></i>
+
+                                                Banjara Hills, Hyderabad
+
+                                            </p>
+
+
+                                            <div class="amenities">
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-wifi"></i>
+                                                    Free Wi-Fi
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-car-front"></i>
+                                                    Parking
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-snow"></i>
+                                                    AC
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-cup-hot"></i>
+                                                    Breakfast
+                                                </span>
+
+                                            </div>
+
+
+                                            <div class="hotel-bottom">
+
+                                                <div>
+
+                                                    <div class="listing-price">
+
+                                                        <strong>
+                                                            ₹3,499
+                                                        </strong>
+
+                                                        <del>
+                                                            ₹5,299
+                                                        </del>
+
+                                                        <span>
+                                                            / night
+                                                        </span>
+
+                                                    </div>
+
+                                                    <div class="tax-text">
+                                                        + taxes and fees
+                                                    </div>
+
+                                                </div>
+
+                                                <a href="hotel-details.html?id=1" class="details-btn">
+                                                    View Details
+                                                </a>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="listing-card hotel-item hotel-clickable" data-id="2"
+                                data-name="Urban Comfort Chennai" data-price="2199" data-old-price="3099"
+                                data-rating="4.3" data-reviews="214" data-type="hotel" data-location="chennai"
+                                data-full-location="T. Nagar, Chennai" data-amenities="wifi,parking,ac"
+                                data-image="./images/hotel2.avif"
+                                data-discount="28"
+                                data-description="Urban Comfort Chennai is a convenient city hotel in T. Nagar offering comfortable rooms, Wi-Fi, parking and air conditioning.">
+
+                                <div class="row g-0">
+
+                                    <div class="col-md-4">
+
+                                        <div class="listing-image">
+
+                                            <img src="./images/hotel2.avif"
+                                                alt="Urban Comfort Chennai">
+
+                                            <span class="listing-discount">
+                                                28% OFF
+                                            </span>
+
+                                            <button class="listing-heart" type="button" aria-label="Add to favorites">
+                                                <i class="bi bi-heart"></i>
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-8">
+
+                                        <div class="listing-content">
+
+                                            <div>
+
+                                                <span class="rating-box">
+                                                    4.3
+                                                    <i class="bi bi-star-fill"></i>
+                                                </span>
+
+                                                <span class="rating-text">
+                                                    Very Good · 214 reviews
+                                                </span>
+
+                                            </div>
+
+                                            <h4>
+                                                Urban Comfort Chennai
+                                            </h4>
+
+                                            <p class="location-text">
+
+                                                <i class="bi bi-geo-alt"></i>
+
+                                                T. Nagar, Chennai
+
+                                            </p>
+
+
+                                            <div class="amenities">
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-wifi"></i>
+                                                    Free Wi-Fi
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-car-front"></i>
+                                                    Parking
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-snow"></i>
+                                                    AC
+                                                </span>
+
+                                            </div>
+
+
+                                            <div class="hotel-bottom">
+
+                                                <div>
+
+                                                    <div class="listing-price">
+
+                                                        <strong>
+                                                            ₹2,199
+                                                        </strong>
+
+                                                        <del>
+                                                            ₹3,099
+                                                        </del>
+
+                                                        <span>
+                                                            / night
+                                                        </span>
+
+                                                    </div>
+
+                                                    <div class="tax-text">
+                                                        + taxes and fees
+                                                    </div>
+
+                                                </div>
+
+                                                <a href="hotel-details.html?id=2" class="details-btn">
+                                                    View Details
+                                                </a> </a>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="listing-card hotel-item hotel-clickable" data-id="3"
+                                data-name="Sunrise Residency Bengaluru" data-price="2799" data-old-price="4799"
+                                data-rating="4.8" data-reviews="421" data-type="resort" data-location="bengaluru"
+                                data-full-location="Koramangala, Bengaluru"
+                                data-amenities="wifi,pool,parking,breakfast,ac"
+                                data-image="./images/hotel3.avif"
+                                data-discount="40"
+                                data-description="Sunrise Residency Bengaluru is a premium resort-style property in Koramangala featuring a pool, parking, breakfast, Wi-Fi and air-conditioned rooms.">
+
+                                <div class="row g-0">
+
+                                    <div class="col-md-4">
+
+                                        <div class="listing-image">
+
+                                            <img src="./images/hotel3.avif"
+                                                alt="Sunrise Residency Bengaluru">
+
+                                            <span class="listing-discount">
+                                                40% OFF
+                                            </span>
+
+                                            <button class="listing-heart" type="button" aria-label="Add to favorites">
+                                                <i class="bi bi-heart"></i>
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-8">
+
+                                        <div class="listing-content">
+
+                                            <div>
+
+                                                <span class="rating-box">
+                                                    4.8
+                                                    <i class="bi bi-star-fill"></i>
+                                                </span>
+
+                                                <span class="rating-text">
+                                                    Exceptional · 421 reviews
+                                                </span>
+
+                                            </div>
+
+                                            <h4>
+                                                Sunrise Residency Bengaluru
+                                            </h4>
+
+                                            <p class="location-text">
+
+                                                <i class="bi bi-geo-alt"></i>
+
+                                                Koramangala, Bengaluru
+
+                                            </p>
+
+
+                                            <div class="amenities">
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-wifi"></i>
+                                                    Free Wi-Fi
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-water"></i>
+                                                    Pool
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-car-front"></i>
+                                                    Parking
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-cup-hot"></i>
+                                                    Breakfast
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-snow"></i>
+                                                    AC
+                                                </span>
+
+                                            </div>
+
+
+                                            <div class="hotel-bottom">
+
+                                                <div>
+
+                                                    <div class="listing-price">
+
+                                                        <strong>
+                                                            ₹2,799
+                                                        </strong>
+
+                                                        <del>
+                                                            ₹4,799
+                                                        </del>
+
+                                                        <span>
+                                                            / night
+                                                        </span>
+
+                                                    </div>
+
+                                                    <div class="tax-text">
+                                                        + taxes and fees
+                                                    </div>
+
+                                                </div>
+
+                                                <a href="hotel-details.html?id=3" class="details-btn">
+                                                    View Details
+                                                </a> </a>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                            <div class="listing-card hotel-item hotel-clickable" data-id="4"
+                                data-name="Temple View Residency" data-price="1899" data-old-price="2499"
+                                data-rating="4.1" data-reviews="167" data-type="hotel" data-location="tirupati"
+                                data-full-location="Tirumala Road, Tirupati" data-amenities="wifi,parking,ac"
+                                data-image="./images/hotel4.avif"
+                                data-discount="25"
+                                data-description="Temple View Residency provides a convenient stay near Tirumala Road with Wi-Fi, parking and air-conditioned rooms.">
+
+                                <div class="row g-0">
+
+                                    <div class="col-md-4">
+
+                                        <div class="listing-image">
+
+                                            <img src="./images/hotel4.avif"
+                                                alt="Temple View Residency Tirupati">
+
+                                            <span class="listing-discount">
+                                                25% OFF
+                                            </span>
+
+                                            <button class="listing-heart" type="button" aria-label="Add to favorites">
+                                                <i class="bi bi-heart"></i>
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-8">
+
+                                        <div class="listing-content">
+
+                                            <div>
+
+                                                <span class="rating-box">
+                                                    4.1
+                                                    <i class="bi bi-star-fill"></i>
+                                                </span>
+
+                                                <span class="rating-text">
+                                                    Very Good · 167 reviews
+                                                </span>
+
+                                            </div>
+
+                                            <h4>
+                                                Temple View Residency
+                                            </h4>
+
+                                            <p class="location-text">
+
+                                                <i class="bi bi-geo-alt"></i>
+
+                                                Tirumala Road, Tirupati
+
+                                            </p>
+
+
+                                            <div class="amenities">
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-wifi"></i>
+                                                    Free Wi-Fi
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-car-front"></i>
+                                                    Parking
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-snow"></i>
+                                                    AC
+                                                </span>
+
+                                            </div>
+
+
+                                            <div class="hotel-bottom">
+
+                                                <div>
+
+                                                    <div class="listing-price">
+
+                                                        <strong>
+                                                            ₹1,899
+                                                        </strong>
+
+                                                        <del>
+                                                            ₹2,499
+                                                        </del>
+
+                                                        <span>
+                                                            / night
+                                                        </span>
+
+                                                    </div>
+
+                                                    <div class="tax-text">
+                                                        + taxes and fees
+                                                    </div>
+
+                                                </div>
+
+                                                <a href="hotel-details.html?id=4" class="details-btn">
+                                                    View Details
+                                                </a> </a>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="listing-card hotel-item hotel-clickable" data-id="5"
+                                data-name="Royal Plaza Mumbai" data-price="4299" data-old-price="6199" data-rating="4.7"
+                                data-reviews="382" data-type="hotel" data-location="mumbai"
+                                data-full-location="Andheri West, Mumbai"
+                                data-amenities="wifi,pool,parking,breakfast,ac"
+                                data-image="./images/hotel5.avif"
+                                data-discount="30"
+                                data-description="Royal Plaza Mumbai is an upscale city hotel in Andheri West offering a pool, breakfast, Wi-Fi, parking and air-conditioned rooms.">
+
+                                <div class="row g-0">
+
+                                    <div class="col-md-4">
+
+                                        <div class="listing-image">
+
+                                            <img src="./images/hotel5.avif"
+                                                alt="Royal Plaza Mumbai">
+
+                                            <span class="listing-discount">
+                                                30% OFF
+                                            </span>
+
+                                            <button class="listing-heart" type="button" aria-label="Add to favorites">
+                                                <i class="bi bi-heart"></i>
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-8">
+
+                                        <div class="listing-content">
+
+                                            <div>
+
+                                                <span class="rating-box">
+                                                    4.7
+                                                    <i class="bi bi-star-fill"></i>
+                                                </span>
+
+                                                <span class="rating-text">
+                                                    Excellent · 382 reviews
+                                                </span>
+
+                                            </div>
+
+                                            <h4>
+                                                Royal Plaza Mumbai
+                                            </h4>
+
+                                            <p class="location-text">
+
+                                                <i class="bi bi-geo-alt"></i>
+
+                                                Andheri West, Mumbai
+
+                                            </p>
+
+
+                                            <div class="amenities">
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-wifi"></i>
+                                                    Free Wi-Fi
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-water"></i>
+                                                    Pool
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-car-front"></i>
+                                                    Parking
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-cup-hot"></i>
+                                                    Breakfast
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-snow"></i>
+                                                    AC
+                                                </span>
+
+                                            </div>
+
+
+                                            <div class="hotel-bottom">
+
+                                                <div>
+
+                                                    <div class="listing-price">
+
+                                                        <strong>
+                                                            ₹4,299
+                                                        </strong>
+
+                                                        <del>
+                                                            ₹6,199
+                                                        </del>
+
+                                                        <span>
+                                                            / night
+                                                        </span>
+
+                                                    </div>
+
+                                                    <div class="tax-text">
+                                                        + taxes and fees
+                                                    </div>
+
+                                                </div>
+
+                                                <a href="hotel-details.html?id=5" class="details-btn">
+                                                    View Details
+                                                </a> </a>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div class="listing-card hotel-item hotel-clickable" data-id="6"
+                                data-name="Aurelia Beach Resort Goa" data-price="4999" data-old-price="8999"
+                                data-rating="4.9" data-reviews="529" data-type="resort" data-location="goa"
+                                data-full-location="Calangute Beach, Goa"
+                                data-amenities="wifi,pool,parking,breakfast,ac"
+                                data-image="./images/hotel6.avif"
+                                data-discount="45"
+                                data-description="Aurelia Beach Resort Goa offers a premium beach stay at Calangute with a pool, breakfast, parking, Wi-Fi and air-conditioned rooms.">
+
+                                <div class="row g-0">
+
+                                    <div class="col-md-4">
+
+                                        <div class="listing-image">
+
+                                            <img src="./images/hotel6.avif"
+                                                alt="Aurelia Beach Resort Goa">
+
+                                            <span class="listing-discount">
+                                                45% OFF
+                                            </span>
+
+                                            <button class="listing-heart" type="button" aria-label="Add to favorites">
+                                                <i class="bi bi-heart"></i>
+                                            </button>
+
+                                        </div>
+
+                                    </div>
+
+
+                                    <div class="col-md-8">
+
+                                        <div class="listing-content">
+
+                                            <div>
+
+                                                <span class="rating-box">
+                                                    4.9
+                                                    <i class="bi bi-star-fill"></i>
+                                                </span>
+
+                                                <span class="rating-text">
+                                                    Exceptional · 529 reviews
+                                                </span>
+
+                                            </div>
+
+                                            <h4>
+                                                Aurelia Beach Resort Goa
+                                            </h4>
+
+                                            <p class="location-text">
+
+                                                <i class="bi bi-geo-alt"></i>
+
+                                                Calangute Beach, Goa
+
+                                            </p>
+
+
+                                            <div class="amenities">
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-wifi"></i>
+                                                    Free Wi-Fi
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-water"></i>
+                                                    Pool
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-car-front"></i>
+                                                    Parking
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-cup-hot"></i>
+                                                    Breakfast
+                                                </span>
+
+                                                <span class="amenity">
+                                                    <i class="bi bi-snow"></i>
+                                                    AC
+                                                </span>
+
+                                            </div>
+
+
+                                            <div class="hotel-bottom">
+
+                                                <div>
+
+                                                    <div class="listing-price">
+
+                                                        <strong>
+                                                            ₹4,999
+                                                        </strong>
+
+                                                        <del>
+                                                            ₹8,999
+                                                        </del>
+
+                                                        <span>
+                                                            / night
+                                                        </span>
+
+                                                    </div>
+
+                                                    <div class="tax-text">
+                                                        + taxes and fees
+                                                    </div>
+
+                                                </div>
+
+                                                <a href="hotel-details.html?id=6" class="details-btn">
+                                                    View Details
+                                                </a> </a>
+
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- =====================================================
+             NO RESULTS
+        ===================================================== -->
+
+                            <div id="noHotelsMessage" class="no-hotels" style="display:none;">
+
+                                <i class="bi bi-search"></i>
+
+                                <h4>
+                                    No hotels found
+                                </h4>
+
+                                <p>
+                                    No properties match your selected filters.
+                                    Try changing your filters.
+                                </p>
+
+                                <button type="button" class="details-btn" onclick="clearFilters()">
+                                    Clear Filters
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- =========================================================
+         PAGINATION
+    ========================================================= -->
+
+                        <nav class="mt-4" id="pagination">
+
+                            <ul class="pagination justify-content-center">
+
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="javascript:void(0)">
+                                        Previous
+                                    </a>
+                                </li>
+
+                                <li class="page-item active">
+                                    <a class="page-link" href="javascript:void(0)">
+                                        1
+                                    </a>
+                                </li>
+
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0)">
+                                        2
+                                    </a>
+                                </li>
+
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0)">
+                                        3
+                                    </a>
+                                </li>
+
+                                <li class="page-item">
+                                    <a class="page-link" href="javascript:void(0)">
+                                        Next
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </nav>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer class="footer">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <!-- BRAND -->
+                <div class="col-lg-4 col-md-6">
+
+                    <h3 class="footer-logo">
+                        Aurelia<span>Stays</span>
+                    </h3>
+
+                    <p class="fs-5">
+                        Discover comfortable hotels, affordable stays and
+                        memorable travel experiences with Aurelia Stays.
+                    </p>
+
+                    <div class="social-icons">
+
+                        <a href="#" aria-label="Facebook">
+                            <i class="bi bi-facebook fs-5"></i>
+                        </a>
+
+                        <a href="#" aria-label="Instagram">
+                            <i class="bi bi-instagram fs-5"></i>
+                        </a>
+
+                        <a href="#" aria-label="Twitter">
+                            <i class="bi bi-twitter-x fs-5"></i>
+                        </a>
+
+                        <a href="#" aria-label="LinkedIn">
+                            <i class="bi bi-linkedin fs-5"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COMPANY -->
+                <div class="col-lg-2 col-md-6">
+
+                    <h5>Company</h5>
+
+                    <a href="about.html">About Us</a>
+
+                    <a href="hotels.html">Hotels</a>
+
+                    <a href="destinations.html">Destinations</a>
+
+                    <a href="offers.html">Offers</a>
+
+                </div>
+
+
+                <!-- EXPLORE -->
+                <div class="col-lg-2 col-md-6">
+
+                    <h5>Explore</h5>
+
+                    <a href="reviews.html">Reviews</a>
+
+                    <a href="login.html">Login</a>
+
+                    <a href="signup.html">Sign Up</a>
+
+                    <a href="contact.html">Contact</a>
+
+                </div>
+
+
+                <!-- SUPPORT -->
+                <div class="col-lg-2 col-md-6">
+
+                    <h5>Support</h5>
+
+                    <a href="contact.html">Help Center</a>
+
+                    <a href="contact.html">Booking Help</a>
+
+                    <a href="terms.html">Terms & Conditions</a>
+
+                    <a href="privacy.html">Privacy Policy</a>
+
+                </div>
+
+
+                <!-- CONTACT -->
+                <div class="col-lg-2 col-md-6">
+
+                    <h5>Contact</h5>
+
+                    <p class="footer-contact">
+
+                        <i class="bi bi-telephone"></i>
+
+                        +91 80 4000 1200
+
+                    </p>
+
+                    <p class="footer-contact">
+
+                        <i class="bi bi-envelope"></i>
+
+                        support@aureliastays.com
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <hr>
+
+
+            <div class="copyright text-center">
+
+                © 2026 Aurelia Stays. All Rights Reserved.
+
+            </div>
+
+        </div>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+    </script>
+        <script src="./script.js"></script>
+</body>
+
+</html>
